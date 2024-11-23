@@ -1,16 +1,21 @@
-apiVersion: v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: akulaku
-  namespace: aplikasi
-  labels:
-    app: akulaku
+  namespace: akulaku
 spec:
-  type: LoadBalancer
-  ports:
-  - name:  http
-    port:  80
-    targetPort: 80
-    protocol: TCP
+  replicas: 1
   selector:
-    app: akulaku
+    matchLabels: 
+      app: akulaku
+  template:
+    metadata:
+      labels:
+        app: akulaku
+    spec:
+      containers:
+      - name: akulaku
+        image: riqimaruq/akulaku:latest
+        ports:
+        - name: web
+          containerPort: 80
