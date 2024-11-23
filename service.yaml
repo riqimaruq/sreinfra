@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: akulaku
-  namespace: akulaku
+  namespace: aplikasi
   labels:
     app: akulaku
 spec:
