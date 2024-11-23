@@ -13,7 +13,7 @@ spec:
 kind: Deployment
 metadata:
   name: akulaku
-  namespace: akulaku
+  namespace: aplikasi
 spec:
   replicas: 1
   selector:
